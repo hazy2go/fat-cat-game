@@ -1,0 +1,17 @@
+{
+  "name": "fat-cat-game",
+  "version": "1.0.0",
+  "description": "A Discord Activity game where players work together to keep a cat happy and healthy",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "keywords": ["discord", "activity", "game", "multiplayer"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discord/embedded-app-sdk": "^2.4.0",
+    "express": "^5.2.1"
+  }
+}

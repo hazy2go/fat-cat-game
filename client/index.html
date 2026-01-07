@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fat Cat Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🐱 Fat Cat Game</h1>
+      <p class="subtitle">Keep the cat happy and healthy!</p>
+    </header>
+
+    <div class="game-area">
+      <!-- Cat Display -->
+      <div class="cat-container">
+        <img id="catSprite" src="/assets/cat-normal.svg" alt="Cat" class="cat-sprite">
+        <div id="catStatus" class="cat-status">Normal</div>
+      </div>
+
+      <!-- Weight Bar -->
+      <div class="weight-section">
+        <div class="weight-label">Cat Weight</div>
+        <div class="weight-bar-container">
+          <div class="weight-bar-bg">
+            <div id="weightBar" class="weight-bar" style="width: 50%"></div>
+            <div class="optimal-zone"></div>
+          </div>
+          <div class="weight-markers">
+            <span class="marker" style="left: 0%">😿</span>
+            <span class="marker" style="left: 45%">😺</span>
+            <span class="marker" style="left: 65%">😻</span>
+            <span class="marker" style="left: 100%">🙀</span>
+          </div>
+        </div>
+        <div id="weightValue" class="weight-value">50/100</div>
+      </div>
+
+      <!-- Feed Button -->
+      <div class="feed-section">
+        <button id="feedButton" class="feed-button">
+          <img src="/assets/sardine.svg" alt="Sardine" class="sardine-icon">
+          <span>Feed Sardine</span>
+        </button>
+        <div id="feedMessage" class="feed-message"></div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="info-panel">
+        <div class="info-row">
+          <div class="info-box">
+            <div class="info-label">Block Time Remaining</div>
+            <div id="blockTimer" class="info-value">6:00:00</div>
+          </div>
+          <div class="info-box">
+            <div class="info-label">Buff Status</div>
+            <div id="buffStatus" class="info-value buff-inactive">Inactive</div>
+          </div>
+        </div>
+
+        <div class="info-box optimal-status">
+          <div id="optimalMessage" class="optimal-message">
+            Keep the cat between 😺 and 😻 for the entire 6-hour block to earn the RARE FISH BUFF +5%!
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-label">Total Feeds This Session</div>
+          <div id="totalFeeds" class="info-value">0</div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="activity-section">
+        <h3>Recent Feeding Activity</h3>
+        <div id="feedHistory" class="feed-history">
+          <div class="history-empty">No one has fed the cat yet!</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Sardines Animation -->
+    <div id="sardineAnimation" class="sardine-float-container"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@discord/embedded-app-sdk@1.2.0/output/embed.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

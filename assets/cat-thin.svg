@@ -1,0 +1,40 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Thin Cat -->
+  <!-- Left Ear -->
+  <polygon points="40,60 50,30 70,55" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+  <!-- Right Ear -->
+  <polygon points="130,60 150,30 160,55" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="80" rx="50" ry="45" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+
+  <!-- Body (thin) -->
+  <ellipse cx="100" cy="140" rx="35" ry="50" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+
+  <!-- Eyes -->
+  <ellipse cx="85" cy="75" rx="8" ry="12" fill="#000"/>
+  <ellipse cx="115" cy="75" rx="8" ry="12" fill="#000"/>
+  <ellipse cx="87" cy="73" rx="3" ry="4" fill="#FFF"/>
+  <ellipse cx="117" cy="73" rx="3" ry="4" fill="#FFF"/>
+
+  <!-- Nose -->
+  <polygon points="100,85 95,92 105,92" fill="#FF69B4"/>
+
+  <!-- Mouth -->
+  <path d="M 100,92 Q 90,98 85,95" stroke="#000" stroke-width="2" fill="none"/>
+  <path d="M 100,92 Q 110,98 115,95" stroke="#000" stroke-width="2" fill="none"/>
+
+  <!-- Whiskers -->
+  <line x1="60" y1="80" x2="30" y2="75" stroke="#000" stroke-width="1"/>
+  <line x1="60" y1="85" x2="30" y2="85" stroke="#000" stroke-width="1"/>
+  <line x1="140" y1="80" x2="170" y2="75" stroke="#000" stroke-width="1"/>
+  <line x1="140" y1="85" x2="170" y2="85" stroke="#000" stroke-width="1"/>
+
+  <!-- Paws -->
+  <ellipse cx="80" cy="185" rx="8" ry="12" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+  <ellipse cx="120" cy="185" rx="8" ry="12" fill="#FFA07A" stroke="#000" stroke-width="2"/>
+
+  <!-- Tail -->
+  <path d="M 65,150 Q 40,160 45,180" stroke="#FFA07A" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M 65,150 Q 40,160 45,180" stroke="#000" stroke-width="2" fill="none"/>
+</svg>

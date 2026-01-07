@@ -1,0 +1,15 @@
+{
+  "name": "Fat Cat Game",
+  "description": "A shared activity where everyone works together to keep a virtual cat happy and healthy!",
+  "developer_name": "Your Name",
+  "privacy_policy_url": "https://your-domain.com/privacy",
+  "terms_of_service_url": "https://your-domain.com/terms",
+  "tags": ["game", "multiplayer", "casual", "pet"],
+  "type": 1,
+  "custom_install_url": "https://your-domain.com",
+  "install_params": {
+    "scopes": ["applications.commands", "bot"],
+    "permissions": "0"
+  },
+  "flags": 0
+}

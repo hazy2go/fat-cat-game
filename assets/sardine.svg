@@ -1,0 +1,29 @@
+<svg width="80" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sardine -->
+  <!-- Body -->
+  <ellipse cx="40" cy="30" rx="35" ry="18" fill="#B8C5D6" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Tail -->
+  <path d="M 5,30 L 10,20 L 10,40 Z" fill="#8B9CB8" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Scales pattern -->
+  <circle cx="25" cy="25" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="35" cy="25" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="45" cy="25" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="30" cy="30" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="40" cy="30" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="25" cy="35" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="35" cy="35" r="3" fill="#9BADC1" opacity="0.5"/>
+  <circle cx="45" cy="35" r="3" fill="#9BADC1" opacity="0.5"/>
+
+  <!-- Eye -->
+  <circle cx="60" cy="27" r="4" fill="#FFF" stroke="#000" stroke-width="1"/>
+  <circle cx="61" cy="27" r="2" fill="#000"/>
+
+  <!-- Fins -->
+  <path d="M 40,15 L 35,8 L 45,10 Z" fill="#8B9CB8" stroke="#000" stroke-width="1.5"/>
+  <path d="M 30,42 L 28,50 L 35,45 Z" fill="#8B9CB8" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Details -->
+  <line x1="15" y1="30" x2="65" y2="30" stroke="#7A8BA0" stroke-width="1" opacity="0.5"/>
+</svg>
