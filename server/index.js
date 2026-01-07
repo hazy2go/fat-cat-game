@@ -37,7 +37,7 @@ const THRESHOLDS = {
 
 // Game mechanics
 const DECAY_RATE = 0.5; // Weight lost per minute
-const FEED_AMOUNT = 8; // Weight gained per sardine
+const FEED_AMOUNT = 2; // Weight gained per sardine (reduced to require more community clicks!)
 const DECAY_INTERVAL = 60 * 1000; // Check decay every minute
 
 // Calculate weight decay based on time passed

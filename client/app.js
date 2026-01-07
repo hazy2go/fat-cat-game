@@ -85,17 +85,17 @@ async function fetchGameState() {
 
 // Update UI
 function updateUI(state) {
-  // Update cat sprite
+  // Update cat sprite (now using real cat photos!)
   const spriteMap = {
-    'starving': '/assets/cat-thin.svg',
-    'thin': '/assets/cat-thin.svg',
-    'normal': '/assets/cat-normal.svg',
-    'chubby': '/assets/cat-normal.svg',
-    'fat': '/assets/cat-fat.svg',
-    'obese': '/assets/cat-fat.svg'
+    'starving': '/assets/cat-thin.jpg',
+    'thin': '/assets/cat-thin.jpg',
+    'normal': '/assets/cat-normal.jpg',
+    'chubby': '/assets/cat-normal.jpg',
+    'fat': '/assets/cat-fat.jpg',
+    'obese': '/assets/cat-fat.jpg'
   };
 
-  catSprite.src = spriteMap[state.catState] || '/assets/cat-normal.svg';
+  catSprite.src = spriteMap[state.catState] || '/assets/cat-normal.jpg';
 
   // Update status text
   const statusMap = {

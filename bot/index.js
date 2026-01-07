@@ -46,7 +46,7 @@ client.on('interactionCreate', async interaction => {
         { name: '⏰ Block Duration', value: '6 hours', inline: true },
         { name: '🎁 Reward', value: '+5% Server Buff', inline: true }
       )
-      .setImage('https://raw.githubusercontent.com/hazy2go/fat-cat-game/main/assets/cat-normal.svg')
+      .setImage('https://raw.githubusercontent.com/hazy2go/fat-cat-game/main/assets/cat-normal.jpg')
       .setFooter({ text: 'Click the button below to start playing!' });
 
     const button = new ButtonBuilder()
