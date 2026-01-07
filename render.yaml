@@ -13,3 +13,16 @@ services:
         value: ifrTkq-VEkQ9Bj2XWOzYaLRGOWMVB2gr
       - key: PORT
         value: 3000
+
+  - type: worker
+    name: fat-cat-game-bot
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run bot
+    envVars:
+      - key: DISCORD_CLIENT_ID
+        value: 1440240283919974451
+      - key: DISCORD_BOT_TOKEN
+        sync: false
