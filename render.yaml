@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: fat-cat-game
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_CLIENT_ID
+        value: 1440240283919974451
+      - key: DISCORD_CLIENT_SECRET
+        value: ifrTkq-VEkQ9Bj2XWOzYaLRGOWMVB2gr
+      - key: PORT
+        value: 3000
