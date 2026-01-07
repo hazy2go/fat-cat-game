@@ -23,11 +23,25 @@ client.once('ready', async () => {
 
   try {
     console.log('📝 Registering slash commands...');
-    await rest.put(
-      Routes.applicationCommands(process.env.DISCORD_CLIENT_ID),
-      { body: commands }
+
+    // Get existing commands to preserve Entry Point commands
+    const existingCommands = await rest.get(
+      Routes.applicationCommands(process.env.DISCORD_CLIENT_ID)
     );
-    console.log('✅ Slash commands registered!');
+
+    // Find if our command already exists
+    const fatcatCommand = existingCommands.find(cmd => cmd.name === 'fatcat');
+
+    if (!fatcatCommand) {
+      // Create new command (POST instead of PUT to avoid removing Entry Point)
+      await rest.post(
+        Routes.applicationCommands(process.env.DISCORD_CLIENT_ID),
+        { body: commands[0] }
+      );
+      console.log('✅ Slash command registered!');
+    } else {
+      console.log('✅ Slash command already exists!');
+    }
   } catch (error) {
     console.error('❌ Error registering commands:', error);
   }
