@@ -1,17 +1,14 @@
 {
   "name": "fat-cat-game",
   "version": "1.0.0",
-  "description": "Discord Activity games - Fat Cat Game and Ochako's Kitchen",
+  "description": "A Discord Activity game where players work together to keep a cat happy and healthy",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "start:fatcat": "node server/index.js",
-    "start:wordle": "node server/wordle.js",
     "dev": "node server/index.js",
-    "bot": "node bot/index.js",
-    "start:all": "node server/index.js & node server/wordle.js & node bot/index.js"
+    "bot": "node bot/index.js"
   },
-  "keywords": ["discord", "activity", "game", "multiplayer", "wordle"],
+  "keywords": ["discord", "activity", "game", "multiplayer", "pet"],
   "author": "",
   "license": "ISC",
   "dependencies": {
