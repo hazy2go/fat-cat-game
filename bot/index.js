@@ -6,12 +6,17 @@ const client = new Client({
 });
 
 const ACTIVITY_URL = `https://discord.com/activities/${process.env.DISCORD_CLIENT_ID}`;
+const WORDLE_ACTIVITY_URL = `https://discord.com/activities/${process.env.DISCORD_CLIENT_ID}`;
 
-// Register slash command
+// Register slash commands
 const commands = [
   {
     name: 'fatcat',
     description: 'Start the Fat Cat Game activity!',
+  },
+  {
+    name: 'ochako',
+    description: 'Play Ochako\'s Kitchen - A Victorian ingredient guessing game!',
   }
 ];
 
@@ -29,8 +34,9 @@ client.once('ready', async () => {
       Routes.applicationCommands(process.env.DISCORD_CLIENT_ID)
     );
 
-    // Find if our command already exists
+    // Find if our commands already exist
     const fatcatCommand = existingCommands.find(cmd => cmd.name === 'fatcat');
+    const ochakoCommand = existingCommands.find(cmd => cmd.name === 'ochako');
 
     if (!fatcatCommand) {
       // Create new command (POST instead of PUT to avoid removing Entry Point)
@@ -38,9 +44,20 @@ client.once('ready', async () => {
         Routes.applicationCommands(process.env.DISCORD_CLIENT_ID),
         { body: commands[0] }
       );
-      console.log('✅ Slash command registered!');
+      console.log('✅ /fatcat command registered!');
     } else {
-      console.log('✅ Slash command already exists!');
+      console.log('✅ /fatcat command already exists!');
+    }
+
+    if (!ochakoCommand) {
+      // Create ochako command
+      await rest.post(
+        Routes.applicationCommands(process.env.DISCORD_CLIENT_ID),
+        { body: commands[1] }
+      );
+      console.log('✅ /ochako command registered!');
+    } else {
+      console.log('✅ /ochako command already exists!');
     }
   } catch (error) {
     console.error('❌ Error registering commands:', error);
@@ -66,6 +83,32 @@ client.on('interactionCreate', async interaction => {
     const button = new ButtonBuilder()
       .setLabel('🎮 Play Fat Cat Game')
       .setURL(ACTIVITY_URL)
+      .setStyle(ButtonStyle.Link);
+
+    const row = new ActionRowBuilder().addComponents(button);
+
+    await interaction.reply({
+      embeds: [embed],
+      components: [row]
+    });
+  }
+
+  if (interaction.commandName === 'ochako') {
+    const embed = new EmbedBuilder()
+      .setTitle('🍳 Ochako\'s Kitchen')
+      .setDescription('*~ Victorian Fish Cookery ~*\n\nHelp Chef Ochako find the secret ingredients for her famous fish dishes!\n\n**How to play:**\n• Guess the 5-letter ingredient\n• 🟩 Green = Correct letter & position\n• 🟨 Yellow = Correct letter, wrong position\n• ⬛ Gray = Letter not in word\n• You have 6 guesses per round!')
+      .setColor('#722F37')
+      .setThumbnail('https://i.ibb.co/LFXKt1p/Gemini-Generated-Image-my3tyqmy3tyqmy3t.png')
+      .addFields(
+        { name: '📝 Guesses', value: '6 per round', inline: true },
+        { name: '💡 Hints', value: 'Available (-150 pts)', inline: true },
+        { name: '🏆 Leaderboard', value: 'Compete for top chef!', inline: true }
+      )
+      .setFooter({ text: 'Est. 1887 ~ Fine Fish Cuisine' });
+
+    const button = new ButtonBuilder()
+      .setLabel('🎮 Play Ochako\'s Kitchen')
+      .setURL(WORDLE_ACTIVITY_URL)
       .setStyle(ButtonStyle.Link);
 
     const row = new ActionRowBuilder().addComponents(button);
